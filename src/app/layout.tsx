@@ -3,9 +3,10 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { ModalProvider } from "@/components/providers/modal-provider";
+import { ToastProvider } from "@/components/providers/toast-provider";
 
-import "./globals.css";
 import prismadb from "@/lib/prismadb";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="ja">
         <body className={inter.className}>
+          <ToastProvider />
           <ModalProvider />
           {children}
         </body>
