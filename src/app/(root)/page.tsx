@@ -1,13 +1,9 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
 
-export default function Home() {
+export default function SetupPage() {
   return (
     <div>
-      <p>Hello</p>
-      <Button size="default" variant="outline">
-        SUBMIT
-      </Button>
+      <UserButton afterSignOutUrl="/" />
     </div>
   );
 }
