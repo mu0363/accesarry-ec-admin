@@ -41,7 +41,8 @@ export const StoreModal = () => {
     try {
       setLoading(true);
       const res = await axios.post("/api/stores", values);
-      toast.success("Store created!");
+      // NOTE: redirectやrouter.pushだとモーダルが消えないため完全にページリロードさせる
+      window.location.assign(`/${res.data.id}`);
     } catch (error) {
       toast.error("Something went wrong.");
     } finally {
