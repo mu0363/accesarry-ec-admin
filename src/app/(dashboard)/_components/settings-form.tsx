@@ -76,7 +76,7 @@ export function SettingsForm({ initialData }: Props) {
   };
 
   return (
-    <div className="space-y-4">
+    <>
       <AlertModal
         isLoading={isLoading}
         isOpen={isOpen}
@@ -132,6 +132,6 @@ export function SettingsForm({ initialData }: Props) {
         description={`${origin}/api/${params.storeId}`}
         variant="public"
       />
-    </div>
+    </>
   );
 }

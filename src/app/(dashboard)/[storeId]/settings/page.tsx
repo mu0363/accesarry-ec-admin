@@ -1,7 +1,7 @@
 import prismadb from "@/lib/prismadb";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { SettingsForm } from "./_components/settings-form";
+import { SettingsForm } from "../../_components/settings-form";
 
 type Props = {
   params: {
@@ -28,11 +28,5 @@ const checkAuthAndStore = async (storeId: string) => {
 export default async function Settings({ params }: Props) {
   const store = await checkAuthAndStore(params.storeId);
 
-  return (
-    <div>
-      <div className="p-8 pt-6 flex-1">
-        <SettingsForm initialData={store} />
-      </div>
-    </div>
-  );
+  return <SettingsForm initialData={store} />;
 }
